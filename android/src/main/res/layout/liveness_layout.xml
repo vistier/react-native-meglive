@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/liveness_layout_rootRel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextureView
+        android:id="@+id/liveness_layout_textureview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.megvii.livenesslib.view.AutoRatioImageview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/liveness_layout_camera_mask" />
+
+    <com.megvii.livenesslib.FaceMask
+        android:id="@+id/liveness_layout_facemask"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <com.megvii.livenesslib.view.AutoRatioImageview
+        android:id="@+id/liveness_layout_head_mask"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/liveness_layout_head_mask" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/liveness_layout_head_mask"
+        android:background="@drawable/liveness_layout_gradient_back" >
+
+        <include
+            android:id="@+id/liveness_layout_first_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            layout="@layout/liveness_detection_step"
+            android:visibility="invisible" />
+
+        <include
+            android:id="@+id/liveness_layout_second_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            layout="@layout/liveness_detection_step"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/liveness_layout_bottom_tips_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/liveness_layout_promptText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:text="请在光线充足的情况下进行检测"
+                android:textColor="#ffffffff"
+                android:textSize="16dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dip"
+                android:src="@drawable/liveness_phoneimage" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/detection_step_timeoutLinear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="bottom"
+            android:orientation="horizontal"
+            android:visibility="invisible" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dip"
+                android:text="倒计时"
+                android:textColor="#ffffffff"
+                android:textSize="12dp" />
+
+            <TextView
+                android:id="@+id/detection_step_timeout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textColor="#00BEE2"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:text="秒"
+                android:textColor="#ffffffff"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/liveness_faceppinside" />
+
+    <ProgressBar
+        android:id="@+id/liveness_layout_progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>

@@ -1,0 +1,18 @@
+{
+
+  "name": "react-native-meglive",
+  "version": "2.4.0",
+  "description": "react-native library for meglive app",
+  "main": "index.js",
+
+
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "react": "15.2.1",
+    "react-native": "0.31.0",
+    "events":"1.0.2"
+  }
+}

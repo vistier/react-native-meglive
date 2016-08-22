@@ -1,0 +1,42 @@
+
+<resources>
+
+    <string name="app_name">人脸验证</string>
+    <dimen name="title_hight">50dip</dimen>
+    <string name="tipsmouth">Open your mouth and close.</string>
+    <string name="tipblink">Do blink with your eyes.</string>
+    <string name="tippose">Rotate your pose vertically.</string>
+    <string name="facelost">Face Lost</string>
+    <string name="timeout">超时</string>
+    <string name="authok">Success</string>
+    <string name="aufail">Failed</string>
+    <string name="steps">活体检测:</string>
+    <string name="pos_detection">POS</string>
+    <string name="mouth_detection">MOUTH</string>
+    <string name="blink_detection">BLINK</string>
+
+    <array name="detect_type">
+        <item>眨眼</item>
+        <item>张嘴</item>
+        <item>摇头</item>
+    </array>
+    <array name="detect_result">
+        <item></item>
+        <item>LIVEPASS</item>
+        <item>人脸追踪失败</item>
+        <item>超时失败</item>
+        <item>LIVENOTPASS</item>
+    </array>
+
+    <string name="loading_text">使用说明：\n1、首先您需要输入姓名；\n2、之后您需要按照屏幕上的提示完成3个动作，以通过活体检测，同时软件会将您的人脸图像发送至服务器进行人脸验证；\n3、如果您没有通过活体检测或者人脸验证，则登陆失败，反之则登陆成功。</string>
+    <string name="loading_confirm">OK,I Know</string>
+	<string name="netowrk_parse_failed">解析服务器数据失败</string>
+	<string name="network_error">网络请求失败</string>
+	<string name="verify_error">验证失败</string>
+	<string name="verify_success">验证成功</string>
+	<string name="liveness_detection_failed">活体检测失败</string>
+    <string name="liveness_detection_failed_timeout">活体检测超时失败</string>
+    <string name="liveness_detection_failed_action_blend">活体检测动作错误</string>
+    <string name="liveness_detection_failed_not_video">活体检测连续性检测失败</string>
+	<string name="novalidframe">没有合适的图像用于人脸识别</string>
+</resources>
